@@ -1,3 +1,8 @@
+/* ── Smooth scroll offset for sticky navbar ───────────────── */
+section[id] {
+  scroll-margin-top: 64px;
+}
+
 /* ── Reset & Base ─────────────────────────────────────────── */
 *,
 *::before,
@@ -225,22 +230,40 @@ a {
 /* ── About ────────────────────────────────────────────────── */
 .about-content {
   display: flex;
-  gap: 60px;
+  gap: 48px;
   padding: 60px;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   background: #0f1117;
 }
 
-.about-text {
-  flex: 2 1 300px;
+/* Left: coding image */
+.about-image {
+  flex: 1 1 380px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  max-height: 460px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid #1e2a3a;
+}
+
+/* Right: text + stats */
+.about-right {
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .about-text h2 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #60a5fa;
-  margin-bottom: 12px;
-  margin-top: 24px;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .about-text h2:first-child {
@@ -253,28 +276,29 @@ a {
 }
 
 .about-stats {
-  flex: 1 1 200px;
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .stat {
+  flex: 1 1 100px;
   background: #1a1f2e;
   border: 1px solid #1e2a3a;
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
   text-align: center;
 }
 
 .stat h3 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #60a5fa;
 }
 
 .stat p {
   color: #94a3b8;
   margin-top: 4px;
+  font-size: 0.9rem;
 }
 
 /* ── Contact ──────────────────────────────────────────────── */
@@ -419,8 +443,11 @@ a {
     padding: 40px 24px;
   }
 
+  .about-image img {
+    max-height: 260px;
+  }
+
   .about-stats {
     flex-direction: row;
-    flex-wrap: wrap;
   }
 }
