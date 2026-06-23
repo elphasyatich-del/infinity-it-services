@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import reeferBg from "./assets/1082975041679679606.jpg";
 import codingImg from "./assets/The curved desk configuration is an ergonomic and….jpg";
+import servicesBg from "./assets/1002332460830578280.jpg";
 
 const services = [
   { icon: "🌐", title: "Web Development", desc: "Custom websites and web apps built with modern technologies." },
@@ -97,14 +98,19 @@ function App() {
           <h1>Our Services</h1>
           <p>Everything your business needs to thrive in the digital age.</p>
         </div>
-        <div className="services-grid">
-          {services.map((s) => (
-            <div className="service-card" key={s.title}>
-              <span className="service-icon">{s.icon}</span>
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-            </div>
-          ))}
+        <div className="services-layout">
+          <div className="services-grid">
+            {services.map((s) => (
+              <div className="service-card" key={s.title}>
+                <span className="service-icon">{s.icon}</span>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="services-image">
+            <img src={servicesBg} alt="Our Services" />
+          </div>
         </div>
       </section>
 
